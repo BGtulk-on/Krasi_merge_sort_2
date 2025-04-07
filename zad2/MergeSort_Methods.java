@@ -26,9 +26,9 @@ public class MergeSort_Methods {
         if (left < right) {
             int mid = (left + right) / 2;
 
-            inversionCount += merge_sort(arr, left, mid);         // Count inversions in the left half
-            inversionCount += merge_sort(arr, mid + 1, right);    // Count inversions in the right half
-            inversionCount += merge(arr, left, mid, right);        // Count inversions during merge
+            inversionCount += merge_sort(arr, left, mid);        
+            inversionCount += merge_sort(arr, mid + 1, right); 
+            inversionCount += merge(arr, left, mid, right);  
         }
         return inversionCount;
     }
