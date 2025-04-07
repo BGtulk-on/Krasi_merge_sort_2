@@ -7,7 +7,7 @@ public class MergeSort_Main {
         System.out.println("Първоначален масив:");
         MergeSort_Methods.print_list(arr);
 
-        int inversionCount = MergeSort_Methods.merge_sort(arr, 0, arr.length - 1);
+        long inversionCount = MergeSort_Methods.merge_sort(arr, 0, arr.length - 1);
 
         System.out.println("Сортиран масив:");
         MergeSort_Methods.print_list(arr);

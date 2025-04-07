@@ -21,17 +21,18 @@ public class MergeSort_Methods {
         System.out.println();
     }
 
-    public static int merge_sort(int[] arr, int left, int right) {
-        int inversionCount = 0;
+    public static long merge_sort(int[] arr, int left, int right) {
+        long inversionCount = 0;
         if (left < right) {
             int mid = (left + right) / 2;
 
-            inversionCount += merge_sort(arr, left, mid);
-            inversionCount += merge_sort(arr, mid + 1, right);
-            inversionCount += merge(arr, left, mid, right);
+            inversionCount += merge_sort(arr, left, mid);         // Count inversions in the left half
+            inversionCount += merge_sort(arr, mid + 1, right);    // Count inversions in the right half
+            inversionCount += merge(arr, left, mid, right);        // Count inversions during merge
         }
         return inversionCount;
     }
+
 
     private static int merge(int[] arr, int left, int mid, int right) {
         int n1 = mid - left + 1;
